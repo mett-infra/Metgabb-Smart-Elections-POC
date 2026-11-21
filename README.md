@@ -11,6 +11,15 @@ Live site: https://mett-infra.github.io/Metgabb-Smart-Elections-POC/
 
 > All people and data are fictional and only real place names are used. Social media and AI run in a clearly labelled mock mode. There is no backend, so nothing is sent anywhere.
 
+## Access (password protected)
+
+The site is a private preview. `index.html` is **encrypted** (AES-256-GCM, with the key derived from the access password using PBKDF2-SHA256 and 600,000 rounds). Without the password, neither visitors nor people reading this repo can see the prototype.
+
+- The access password is shared privately. It is never stored in this repo.
+- After unlocking, "Keep this device unlocked for 7 days" remembers that browser.
+- To lock a device again, open the site with `?lock` added, e.g. `https://mett-infra.github.io/Metgabb-Smart-Elections-POC/?lock`.
+- The demo logins below only work inside the unlocked site.
+
 ## Demo logins
 
 | Role | Email | Password |
@@ -43,7 +52,7 @@ Everything is saved in the viewer's own browser (localStorage), so each person a
 
 ## Run locally
 
-Double-click `index.html`, or serve it:
+Double-click `index.html` (it asks for the access password), or serve it:
 
 ```powershell
 npx serve . -l 8080
